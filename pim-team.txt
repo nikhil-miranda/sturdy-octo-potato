@@ -1,0 +1,48 @@
+CREATE
+
+(Siva:EMPLOYEE{name:"Siva NV", state: "Odisha"}),
+(Sunil:EMPLOYEE{name:"Sunil P", state: "Karnataka"}),
+(Nikhil:EMPLOYEE{name:"Nikhil M", state: "Karnataka"}),
+(Yashaskara:EMPLOYEE{name:"Yashaskara J", state: "Karnataka"}),
+(Annapurna:EMPLOYEE{name:"Annapurna M", state: "Karnataka"}),
+(Aninda:EMPLOYEE{name:"Aninda K", state: "West Bengal"}),
+(Bhuvan:EMPLOYEE{name:"Bhuvan K", state: "Belgium"}),
+(Kuntal:EMPLOYEE{name:"Kuntal G", state: "West Bengal"}),
+(Yashwal:EMPLOYEE{name:"Yashwal K", state: "Karnataka"}),
+
+(FE:DEPARTMENT{shortName:"FE", longName:"Frontend Team"}),
+(BE:DEPARTMENT{shortName:"BE", longName:"Backend Team"}),
+(T:DEPARTMENT{shortName:"T", longName:"Testing Team"}),
+(PM:DEPARTMENT{shortName:"PM", longName:"Product Manangement Team"}),
+
+(TheCompany:COMPANY{name:"UNBXD PIM"}),
+
+(Siva)-[:MEMBER_OF]->(PM),
+(Sunil)-[:MEMBER_OF]->(BE),
+(Nikhil)-[:MEMBER_OF]->(BE),
+(Yashaskara)-[:MEMBER_OF]->(FE),
+(Annapurna)-[:MEMBER_OF]->(T),
+(Aninda)-[:MEMBER_OF]->(BE),
+(Bhuvan)-[:MEMBER_OF]->(BE),
+(Kuntal)-[:MEMBER_OF]->(FE),
+(Yashwal)-[:MEMBER_OF]->(BE),
+
+
+(Sunil)-[:REPORTS_TO]->(Siva),
+(Nikhil)-[:REPORTS_TO]->(Sunil),
+(Yashaskara)-[:REPORTS_TO]->(Ravi),
+(Annapurna)-[:REPORTS_TO]->(Siva),
+(Bhuvan)-[:REPORTS_TO]->(Sunil),
+(Aninda)-[:REPORTS_TO]->(Siva),
+(Kuntal)-[:REPORTS_TO]->(Ravi),
+(Yashwal)-[:REPORTS_TO]->(Siva),
+
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Siva),
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Sunil),
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Nikhil),
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Yashaskara),
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Annapurna),
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Bhuvan),
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Aninda),
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Kuntal),
+(TheCompany)-[:EMPLOYS{type:"permanent"}] -> (Yashwal)
